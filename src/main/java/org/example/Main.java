@@ -14,15 +14,25 @@ public class Main {
 
         boolean isValid = true;
 
-        isValid = isValidParenthisis(expression);
+        isValid = (isValidParenthisis(expression) && isValidOperators(expression));
 
         System.out.println(isValid);
 
         //Validating the braces;
+    }
 
+    public static boolean isValidOperators(String expression){
+        for(int i=0;i<expression.length()-1;i++){
+            char current = expression.charAt(i);
+            char next = expression.charAt(i + 1);
+            if(current == '+' || current == '-' || current == '*' || current == '/'){
+                if(next == '+' || next == '-' || next == '*' || next == '/'){
+                    return false;
+                }
 
-
-
+            }
+        }
+        return true;
     }
 
     public static boolean isValidParenthisis(String expression) {
