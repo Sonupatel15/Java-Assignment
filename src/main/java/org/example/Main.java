@@ -12,6 +12,7 @@ public class Main {
         String expression = input.nextLine();
         System.out.println(expression);
 
+
         boolean isValid = true;
 
         isValid = (isValidParenthisis(expression) && isValidOperators(expression));
