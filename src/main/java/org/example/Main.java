@@ -16,7 +16,14 @@ public class Main {
 
         isValid = (isValidParenthisis(expression) && isValidOperators(expression));
 
-        System.out.println(isValid);
+        if(isValid) {
+            Stack<Character> stack = new Stack<>();
+            for (int i = 0; i < expression.length(); i++) {
+                char c = expression.charAt(i);
+                System.out.println(c);
+                stack.push(c);
+            }
+        }
 
         //Validating the braces;
     }
